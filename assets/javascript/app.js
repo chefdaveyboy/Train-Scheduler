@@ -30,7 +30,7 @@ $("#add-train-btn").on("click", function(event) {
   var trainFreq = $("#frequency-input").val().trim();
 
   
-
+  //stores the input information.
   var newTrain = {
     train: trainName,
     destination: trainDestination,
@@ -38,7 +38,7 @@ $("#add-train-btn").on("click", function(event) {
     frequency: trainFreq
 
   };
-
+  //pushes the information to firebase.
   database.ref().push(newTrain);
 
   //clear the text boxes
@@ -63,23 +63,21 @@ database.ref().on("child_added", function(childSnapshot) {
   var trainFreq = childSnapshot.val().frequency;
   //LOTs of fun math!
   //
-  // var trainStartConvert = moment(trainStart, "HH:mm");
-  // console.log(trainStartConvert);
-  //
+  //calculates the difference in minutes of the First Train Time and the Current Time.
   var timeDiff = moment().diff(moment(moment(trainStart, "HH:mm")), "minutes");
-
+  //finds the remainder between the time difference and the train frequency.
   var remainder = timeDiff % trainFreq;
-  
+  //finds the time till arrival by subtracting the frequency and the remainder.
   var timeTill = trainFreq - remainder;
-
+  //adds the the time till arrival to the current time.
   var arrivalTime = moment().add(timeTill, "minutes");
- 
+  //converts the arrival time into a time either AM or PM.
   var arrivalConvert = moment(arrivalTime).format("hh:mm A");
-
+  //If there's one minute left Minutes Away will display this message.
   if (timeTill === 1) {
     timeTill = "This Train is About to Arrived";
   }
-  
+  //appends all the information to the table.
   var newRow = $("<tr>").append(
     $("<td>").text(trainName),
     $("<td>").text(trainDestination),

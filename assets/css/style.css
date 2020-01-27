@@ -1,0 +1,30 @@
+.fas {
+    margin-right: 4px;
+}
+
+.far {
+    margin-left: 4px;
+}
+
+.jumbotron {
+    background-color: slateblue;
+    color: white;
+}
+
+.train-schedule {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.add-train {
+    background-color: mediumslateblue;
+    color: white;
+}
+
+th {
+    font-weight: 600;
+}
+
+label {
+    font-weight: 600;
+}

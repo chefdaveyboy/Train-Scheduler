@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Scheduler</title>
+    <link rel="shortcut icon" href="assets/images/train-icon.png" />
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/e8aa8f3442.js" crossorigin="anonymous"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
@@ -23,13 +25,13 @@
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-4 text-center">Train Scheduler</h1>
-        <p class="lead text-center">Have a safe Trip!  And mind the gap.</p>
+        <p class="lead text-center">Have a safe trip!  And mind the gap.</p>
     </div>
 
     <div class="card mb-4">
-        <div class="card-header">Current Train Schedule</div>
+        <div class="card-header train-schedule">Current Train Schedule</div>
         <div class="card-body">
-            <table class="table" id="train-table">
+            <table class="table table-hover" id="train-table">
                 <thead>
                   <tr>
                     <th scope="col">Train Name</th>
@@ -45,27 +47,27 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header">Add Trains</div>
+      <div class="card mb-4">
+        <div class="card-header add-train">Add Trains</div>
         <div class="card-body">
             <form>
                 <div class="form-group">
-                  <label for="employee-name-input">Train Name</label>
+                  <label for="employee-name-input"><i class="fas fa-subway"></i>Train Name</label>
                   <input class="form-control" id="train-name-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="role-input">Destination</label>
+                  <label for="role-input"><i class="fas fa-map-marker-alt"></i>Destination</label>
                   <input class="form-control" id="destination-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="start-input">First Train Time (HH:mm - military time)</label>
+                  <label for="start-input"><i class="fas fa-hourglass-half"></i></i>First Train Time (HH:mm - military time)</label>
                   <input class="form-control" id="train-start-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="rate-input">Frequency (Minutes)</label>
+                  <label for="rate-input"><i class="fas fa-stopwatch"></i>Frequency (Minutes)</label>
                   <input class="form-control" id="frequency-input" type="text">
                 </div>
-                <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+                <button class="btn btn-primary float-right" id="add-train-btn">Submit<i class="far fa-calendar-plus"></i></button>
               </form>
             </div>
           </div>
